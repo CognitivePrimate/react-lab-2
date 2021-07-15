@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
+
+
+* {
+  background: #f3f1f7;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.wrapper {
+  /* display:flex; */
+  max-width: 700px;
+  min-width: 400px;
+  width: 80vw;
+}
+
+.MainHead {
+  font-family: 'Homemade Apple', cursive;
+  color: #03a9f4;
+  font-size: 42px;
+  text-align: center;
+  line-height: 60px;
+  margin: 50px auto 0 auto;
+}
+
+.newThoughtButton {
+  background: #03a9f4;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5);
+  padding: 5px;
+  color:#f3f1f7;
+  font-size: 1.5rem;
+  transition:all 0.3s;
+  margin: 15px 0 10px 0;
+}
+
+.newThoughtButton:hover{
+  opacity: 0.8;
+}
+
+form{
+  background: #79c5e8;
+  width: 50%;
+}
+
+.postWrapper {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.post {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.title {
+  font-size: 24px;
+  margin: 10px 0 5px 0;
+}
+
+.thought {
+  margin: 5px 0 10px 0;
+}
+
+.trashIcon {
+  cursor: pointer;
+}
