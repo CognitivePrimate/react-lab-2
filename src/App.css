@@ -49,10 +49,10 @@ body {
   opacity: 0.8;
 }
 
-form{
+/* form{
   background: #79c5e8;
   width: 50%;
-}
+} */
 
 .postWrapper {
   display: flex;
@@ -79,4 +79,57 @@ form{
 
 .trashIcon {
   cursor: pointer;
+}
+
+.ReactModal__Body--open{
+  background: black;
+  display: flex;
+  justify-content: center;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalMain{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #79c5e8;
+  width: 50%;
+  height: 350px;
+  border-radius: 5px;
+  margin-bottom: 325px;
+  box-shadow: 10px 10px 45px 20px rgba(0,0,0, 0.5);
+}
+
+.xIcon{
+  cursor: pointer;
+  background: #79c5e8;
+}
+
+#PostInputForm {
+  background: #79c5e8;
+}
+
+.formTitleXWrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #79c5e8;
+  width: 90%;
+}
+
+label {
+  background: #79c5e8;
 }
