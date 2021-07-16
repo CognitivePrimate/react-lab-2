@@ -15,15 +15,14 @@ const PostInList = ({post}: Props) => {
     const HandleDeletePost = () => {
         console.log("delete test");
     }
-
+    
     return(
         <div className="post">
             <div className="postLeft">
                 <h3 className="title">{post.title}</h3>
                 <p className="thought">{post.thought}</p>
             </div>
-            <img className="trashIcon" src={TrashIcon} onClick={HandleDeletePost} alt="trash-icon"/>
-            
+            <img className="trashIcon" src={TrashIcon} onClick={HandleDeletePost} alt="trash-icon"/> 
         </div>
     )
 }

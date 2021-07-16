@@ -9,7 +9,7 @@ const SocialPosts = () => {
         {
             title: "I can has cheezburger?",
             thought: "I haven't eaten in minutes. Please send help."
-        },
+        }
     ])
 
 
@@ -23,9 +23,8 @@ const SocialPosts = () => {
             <div className="postWrapper">
                 {posts.map((post, index) => {
                     return <PostInList
-                                key={`${post.title}-${index}`} //<---what is this even for/saying?
+                                key={`${post.title}-${index}`}
                                 post={post}
-                                // thought={post.thought}
                             />
                 })}
             </div>

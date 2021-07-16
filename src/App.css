@@ -56,9 +56,11 @@ form{
 
 .postWrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5);
 }
 .post {
   display: flex;
