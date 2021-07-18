@@ -58,14 +58,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* TEST */
   /* border: 1px solid black; */
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5);
+  /* border-radius: 5px; */
+  /* box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5); */
 }
 .post {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  /* width: 90%; */
+  /* TEST BELOW */
+  width: 100%;
+  border-radius: 5px;
+  height: 76.05px;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5);
+  margin: 2.5px 0;
+
 }
 
 .title {
@@ -130,9 +138,14 @@ body {
   box-shadow: 10px 10px 45px 20px rgba(0,0,0, 0.5);
 }
 
+.postLeft {
+  margin-left: 10px;
+}
+
 .postRight{
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 

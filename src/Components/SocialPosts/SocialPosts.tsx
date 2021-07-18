@@ -56,34 +56,49 @@ const SocialPosts = () => {
     }
 
     // VOTE SECTION
-    // sort and move functions
-    // const sort = (index: number) => {
-    //     return posts[index].votes > posts[index-1].votes ? shift(index) : null;
-    // }
 
-    const sort = (index: number) => {
+    const handleSort = (index: number) => {
+
         const voteBeingSorted: number = posts[index].votes;
-        console.log(`preTempIndex ${index}`);
         const tempIndex: number = index-1;
-        console.log(`PostTempIndex ${tempIndex}`);
-        const voteBeingComparedTo: number = posts[tempIndex].votes;
-        console.log(`voteBeingSorted: ${voteBeingSorted}`);
-        console.log(`voteBeingComparedTo: ${voteBeingComparedTo}`)
-        return voteBeingSorted > voteBeingComparedTo ? shift(index) : null;
+        
+        // prevent error if index < 0
+            // if (voteBeingSorted > 0) {}
+        // const sort = (): any => {
+            
+            console.log(`PostTempIndex ${tempIndex}`);
+            const voteBeingComparedTo: number = posts[tempIndex].votes;
+            console.log(`voteBeingSorted: ${voteBeingSorted}`);
+            console.log(`voteBeingComparedTo: ${voteBeingComparedTo}`)
+            // return voteBeingSorted > voteBeingComparedTo && tempIndex > 0 ? handleShift(index) : null;
+            return (voteBeingSorted && voteBeingComparedTo && tempIndex) > 0 ? handleShift(index) : null;
+
+        // };
+
+        // return tempIndex > 0 ? sort() : null;
+        
+        
 
     }
-    // move function
-    const shift = (index: number) => {
+    // move function --- fix type (back to number?)
+    const handleShift = (index: any) => {
         setPostObjects(prevPosts => [
-            ...prevPosts.slice(index),
-            ...prevPosts.slice(index-1)
+            // ...prevPosts.slice(0, index),
+            // ...prevPosts.slice(index-1)
+            // BRITTANY TEST
+            ...prevPosts.slice(0, index-1),
+            ...prevPosts.slice(index, index+1),
+            ...prevPosts.slice(index-1, index),
+            ...prevPosts.slice(index+1)
+            // END BRITTANY TEST
+
         ]);
     }
 
 
     // handler functions
-    const handleUpVote = (index: number) => {posts[index].votes++; sort(index); console.log(posts[index].votes)};
-    const handleDownVote = (index: number) => {posts[index].votes--; sort(index); console.log(posts[index].votes)};
+    const handleUpVote = (index: number) => {posts[index].votes++; handleSort(index); console.log(`Posts[index].votes: ${posts[index].votes}`)};
+    const handleDownVote = (index: number) => {posts[index].votes--; handleSort(index); console.log(posts[index].votes)};
 
     // VOTE SECTION END
 
