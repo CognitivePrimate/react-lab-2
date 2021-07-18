@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Post } from "../../interfaces";
 
 import XIcon from "../../Icons/cancel_black_24dp.svg";
@@ -7,30 +7,38 @@ import XIcon from "../../Icons/cancel_black_24dp.svg";
 
 // for ReactModal
 import React from "react";
-import Modal from "react-modal";
-import ReactDom from "react-dom";
-import ReactModal from "react-modal";
-// Modal.setAppElement('#PostInputForm');
+// import Modal from "react-modal";
+// import ReactDom from "react-dom";
+// import ReactModal from "react-modal";
 
 interface Props {
     // openModal: () => void;
     // closeModal: () => void;
-    isOpen: boolean;
+    className: string;
+    handleHidden: () => void;
+    onSubmit: (post: Post) => void;
+
 }
 
 
 
-const PostForm = ({isOpen}: Props) => {
+const PostForm = ({className, handleHidden, onSubmit}: Props) => {
     const [title, setTitle] = useState("");
     const [thought, setThought] = useState("");
-    // Modal.setAppElement('#PostInputForm');
 
-    // const [modalIsOpen, setIsOpen] = useState(false);
+    // handles submit event with Post object key values
+    const handlesubmit = (e: FormEvent) => {
+        e.preventDefault();
+        onSubmit({
+            title,
+            thought,
+            votes: 0
+        });
+        handleHidden();
+        setTitle("");
+        setThought("");
+    }
 
-    // const openModal = () => setIsOpen(true);
-    const closeModal = () => isOpen = false;
-    // TEST
-    const test = "modalBodyOpen";
 
     // END TEST
 
@@ -38,19 +46,17 @@ const PostForm = ({isOpen}: Props) => {
     const newThought = (e: any) => setThought(e.target.value)
 
     return(
-        <ReactModal overlayClassName="modalOverlay"  bodyOpenClassName="null"  className="modalMain" isOpen={isOpen}>
-            <form id="PostInputForm">
+            <form className={`PostInputForm ${className}`} >
                 <div className="formTitleXWrapper">
                     <label htmlFor="title">Title</label>
-                    <img className="xIcon" src={XIcon} onClick={closeModal} alt="trash-icon"/>
+                    <img className="xIcon" src={XIcon} onClick={handleHidden} alt="trash-icon"/>
                 </div>
                 
                 <input type="text" name="title" id="title" value={title} onChange={newTitle}/><br/>
                 <label htmlFor="thought">Thought</label><br/>
                 <input type="textArea" name="thought" id="thought" value={thought} onChange={newThought}/><br/>
-                <button type="submit">Word Vomit</button>
+                <button id="formSubmitButton" type="submit" onClick={handlesubmit}>Word Vomit</button>
             </form>
-        </ReactModal>
         
     )
 }
