@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
-
-
 * {
   background: #f3f1f7;
   font-family: 'Dosis', sans-serif;
@@ -17,7 +15,6 @@ body {
 }
 
 .wrapper {
-  /* display:flex; */
   max-width: 700px;
   min-width: 400px;
   width: 80vw;
@@ -49,31 +46,26 @@ body {
   opacity: 0.8;
 }
 
-/* form{
-  background: #79c5e8;
-  width: 50%;
-} */
-
 .postWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* TEST */
-  /* border: 1px solid black; */
-  /* border-radius: 5px; */
-  /* box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5); */
 }
+
 .post {
   display: flex;
   justify-content: space-between;
-  /* width: 90%; */
-  /* TEST BELOW */
   width: 100%;
   border-radius: 5px;
   height: 76.05px;
   box-shadow: 2px 2px 5px 1px rgba(0,0,0, 0.5);
   margin: 2.5px 0;
+  overflow: hidden;
+  transition: all 2s;
+}
 
+.post:hover {
+  height: auto;
 }
 
 .title {
@@ -85,12 +77,12 @@ body {
   margin: 5px 0 10px 0;
 }
 
-.trashIcon {
+.icon {
   cursor: pointer;
   margin: 0 3px;
 }
 
-.trashIcon:hover {
+.icon:hover {
   animation: AnimateTrash .4s infinite;
 
 }
@@ -105,39 +97,6 @@ body {
   
 }
 
-.ReactModal__Body--open{
-  background: black;
-  display: flex;
-  justify-content: center;
-}
-
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modalMain{
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background: #79c5e8;
-  width: 50%;
-  height: 350px;
-  border-radius: 5px;
-  margin-bottom: 325px;
-  box-shadow: 10px 10px 45px 20px rgba(0,0,0, 0.5);
-}
-
 .postLeft {
   margin-left: 10px;
 }
@@ -147,8 +106,6 @@ body {
   align-items: center;
   margin-right: 10px;
 }
-
-
 
 .xIcon{
   cursor: pointer;
@@ -170,7 +127,6 @@ body {
   right: 25%;
   z-index: 5;
   box-shadow: 0 0 0 1280px rgba(0,0,0, 0.7);
-
 }
 
 .hidden {
@@ -190,7 +146,6 @@ body {
 #title {
   height: 30px;
   border-radius: 5px;
-  /* background: #f3f1f7; */
 }
 
 #thought {
@@ -213,6 +168,4 @@ label {
 
 #formSubmitButton:hover {
   opacity: 0.8;
-
-
 }

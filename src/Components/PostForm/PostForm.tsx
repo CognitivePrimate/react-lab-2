@@ -3,26 +3,15 @@ import { Post } from "../../interfaces";
 
 import XIcon from "../../Icons/cancel_black_24dp.svg";
 
-
-
-// for ReactModal
-import React from "react";
-// import Modal from "react-modal";
-// import ReactDom from "react-dom";
-// import ReactModal from "react-modal";
-
 interface Props {
-    // openModal: () => void;
-    // closeModal: () => void;
     className: string;
-    handleHidden: () => void;
+    onClose: () => void;
     onSubmit: (post: Post) => void;
-
 }
 
 
 
-const PostForm = ({className, handleHidden, onSubmit}: Props) => {
+const PostForm = ({className, onClose, onSubmit}: Props) => {
     const [title, setTitle] = useState("");
     const [thought, setThought] = useState("");
 
@@ -34,7 +23,7 @@ const PostForm = ({className, handleHidden, onSubmit}: Props) => {
             thought,
             votes: 0
         });
-        handleHidden();
+        onClose();
         setTitle("");
         setThought("");
     }
@@ -49,7 +38,7 @@ const PostForm = ({className, handleHidden, onSubmit}: Props) => {
             <form className={`PostInputForm ${className}`} >
                 <div className="formTitleXWrapper">
                     <label htmlFor="title">Title</label>
-                    <img className="xIcon" src={XIcon} onClick={handleHidden} alt="trash-icon"/>
+                    <img className="xIcon" src={XIcon} onClick={onClose} alt="trash-icon"/>
                 </div>
                 
                 <input type="text" name="title" id="title" value={title} onChange={newTitle}/><br/>

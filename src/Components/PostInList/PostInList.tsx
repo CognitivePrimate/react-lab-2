@@ -1,3 +1,6 @@
+
+
+// icons for right side of post
 import TrashIcon from "../../Icons/delete_black_24dp.svg";
 import Up from "../../Icons/up.svg";
 import Down from "../../Icons/down.svg";
@@ -5,6 +8,7 @@ import Down from "../../Icons/down.svg";
 
 // interfaces
 import {Post}  from "../../interfaces";
+
 
 interface Props {
     post: Post
@@ -23,9 +27,11 @@ const PostInList = ({post, onDelete, upVote, downVote}: Props) => {
                 <p className="thought">{post.thought}</p>
             </div>
             <div className="postRight">
-                <img className="trashIcon" src={Up} onClick={upVote} alt="upvote"/>
-                <img className="trashIcon" src={Down} onClick={downVote} alt="downvote"/>
-                <img className="trashIcon" src={TrashIcon} onClick={onDelete} alt="trash-icon"/>    
+                <img className="icon" src={Up} onClick={upVote} alt="upvote"/>
+                {/* span doesn't update until votes > votes of post above. WHY?! */}
+                <span>{post.votes}</span>
+                <img className="icon" src={Down} onClick={downVote} alt="downvote"/>
+                <img className="icon" src={TrashIcon} onClick={onDelete} alt="trash-icon"/>    
             </div>
              
         </div>
